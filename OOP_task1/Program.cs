@@ -10,6 +10,10 @@ namespace HomeWork_1
             private double side; //Сторона квадрата
             private double diametr; //Диаметр окружности
 
+            public Square()
+            {
+                
+            }
             public void GetShape()
             {
                 Console.WriteLine("\nДавайте теперь определим поместится ли квадрат в круг и наоборот :) ");
@@ -135,8 +139,8 @@ namespace HomeWork_1
             }
 
             // Создаем экземпляр класса и вызываем конструктор для проверки размеров фигур
+            
             Square fitToSircle = new Square();
-
             fitToSircle.GetShape();
 
 

@@ -53,6 +53,11 @@ namespace OOP_task1
             set { side = value; }
         }
 
+        double Diameter
+        {
+            get { return diametr; }
+            set { diametr = value; }
+        }
 
     }
 }
