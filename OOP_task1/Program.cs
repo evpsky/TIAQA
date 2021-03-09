@@ -49,6 +49,11 @@ namespace HomeWork_1
                 get { return side; }
                 set { side = value; }
             }
+            double Diameter
+            {
+                get { return diametr; }
+                set { diametr = value; }
+            }
 
 
         }
