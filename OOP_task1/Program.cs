@@ -4,7 +4,7 @@ namespace HomeWork_1
 {
     class Program
     {
-        // Задание №2 - Класс для расчета влезет ли квадрат в круг или нет
+        // Задание №2 - Расчет влезет ли квадрат в круг или нет.
         class Square
         {
             private double side; //Сторона квадрата
@@ -66,7 +66,7 @@ namespace HomeWork_1
 
         static void Main(string[] args)
         {
-
+            // Задание №1
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Программа считает площадь квадрата и круга");
             
