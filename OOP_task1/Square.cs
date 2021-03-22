@@ -1,63 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace OOP_task1
 {
-    // ** Копия класса, сюда смотреть не надо, он есть в файле Program.cs
-    // Задание №2 - Класс для расчета влезет ли квадрат в круг или нет)
-    class Square
+    public class Square
     {
-        private double side; //Сторона квадрата
-        private double diametr; //Диаметр окружности
+        private double _squareSide; //a side of a square
+        public double SquareSide { get; set; }// getter and setter
 
-        public void GetShape()
+        public Square(double squareSide)  // constructor
         {
-            Console.WriteLine("\nДавайте теперь определим поместится ли квадрат в круг и наоборот :) ");
-            const double P = 3.14;
-            Console.Write("\nВведите площадь круга: ");
-            double S1 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine();
-            Console.Write("Введите площадь квадрата: ");
-            double S2 = Convert.ToDouble(Console.ReadLine());
-
-            double Diametr = Math.Sqrt(S1 / P) * 2;
-            double Side = Math.Sqrt(S2);
-
-            if (Diametr <= Side)
-            {
-                Console.WriteLine();
-                Console.WriteLine("a) Уместится");
-            }
-
-            else
-            {
-                Console.WriteLine();
-                Console.WriteLine("a) Не уместится");
-            }
-
-            double Diagonal = Side * Math.Sqrt(2);
-
-            if (Diagonal <= Diametr)
-                Console.WriteLine("б) Уместится");
-
-            else
-                Console.WriteLine("б) Не уместится");
+            SquareSide = squareSide;
         }
-        double Side
+        public double GetSquareOfFigureSquare() // method to calculate square of a figure square
         {
-            get { return side; }
-            set { side = value; }
+            return _squareSide * _squareSide;
         }
-
-        double Diameter
-        {
-            get { return diametr; }
-            set { diametr = value; }
-        }
-
     }
 }
+
