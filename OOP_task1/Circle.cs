@@ -9,10 +9,10 @@ namespace OOP_task1
         public double Radius { get; set; } // getter and setter 
         public Circle(double radius) // constructor
         {
-            Radius = radius;
+            Radius = _radius;
         }
 
-        public double GetCircleSquare() // get circle square
+        public double GetCircleArea() // get circle square
         {
             return Math.PI * Math.Pow(Radius, 2);
         }

@@ -6,15 +6,15 @@ namespace OOP_task1
     public class Square
     {
         private double _squareSide; //a side of a square
-        public double SquareSide { get; set; }// getter and setter
+        public double SquareArea { get; set; }// getter and setter
 
         public Square(double squareSide)  // constructor
         {
-            SquareSide = squareSide;
+            SquareArea = _squareSide;
         }
-        public double GetSquareOfFigureSquare() // method to calculate square of a figure square
+        public double GetSquareArea() // method to calculate square of a figure square
         {
-            return _squareSide * _squareSide;
+            return SquareArea * SquareArea;
         }
     }
 }

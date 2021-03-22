@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculateArea.cs" />
     <Compile Include="CheckFigureShape.cs" />
     <Compile Include="Circle.cs" />
-    <Compile Include="Helpers\RandomNubmer.cs" />
+    <Compile Include="Helpers\HelperStepsTriesCheck.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Square.cs" />
