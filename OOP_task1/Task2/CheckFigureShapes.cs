@@ -4,31 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_task1
+namespace OOP_task1.Task2
 {
-
-    public class Shape
+    public class CheckFigureShapes
     {
-        private double side; //Сторона квадрата
-        private double diametr; //Диаметр окружности
+        private double squareArea; //Сторона квадрата
+        private double circleRadius; //Диаметр окружности
 
-        public double Radius;
-        public Shape(double radius)
+        public double Area { get; set; }
+        public double Radius { get; set; }
+
+        public CheckFigureShapes(double radius, double area)
         {
             Radius = radius;
+            Area = area;
         }
-        public void GetShape()
+
+
+        public static void GetShape()
         {
-            Console.WriteLine("\nДавайте теперь определим поместится ли квадрат в круг и наоборот :) ");
-            const double P = 3.14;
-            Console.Write("\nВведите площадь круга: ");
+            const double PI = 3.14;
+            Console.Write("\nEnter circle Area is: {0}", Radius);
             double S1 = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine();
-            Console.Write("Введите площадь квадрата: ");
+            Console.Write("Enter square Area: ");
             double S2 = Convert.ToDouble(Console.ReadLine());
 
-            double Diametr = Math.Sqrt(S1 / P) * 2;
+            double Diametr = Math.Sqrt(S1 / PI) * 2;
             double Side = Math.Sqrt(S2);
 
             if (Diametr <= Side)
@@ -51,17 +54,6 @@ namespace OOP_task1
             else
                 Console.WriteLine("б) Не уместится");
         }
-        double Side
-        {
-            get { return side; }
-            set { side = value; }
-        }
-
-        double Diameter
-        {
-            get { return diametr; }
-            set { diametr = value; }
-        }
-
     }
 }
+

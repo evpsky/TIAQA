@@ -15,17 +15,17 @@ namespace OOP_task1
             Circle circle = new Circle(radius);
             Console.WriteLine("Circle area is " + Math.Round(circle.GetCircleArea(), 2));
 
-            Console.WriteLine("Press any key to proceed to next step...");
+            Console.WriteLine("\nPress any key to proceed to next step...");
             Console.ReadLine();
         }
         public static void AreaOfASquare()
         {
             HelperStepsTriesCheck helperStepsTriesCheck = new HelperStepsTriesCheck();
             Console.WriteLine("\nPlease, enter length of a square side and press any Enter: ");
-            double side = helperStepsTriesCheck.GetEnteredValue();
+            double squareSide = helperStepsTriesCheck.GetEnteredValue();
 
-            Square square = new Square(side);
-            Console.WriteLine("Circle area is " + Math.Round(square.GetSquareArea(), 2));
+            Square square = new Square(squareSide);
+            Console.WriteLine("Square area is " + Math.Round(square.GetSquareArea(), 2));
 
             Console.WriteLine("Press any key to proceed to next step...");
             Console.ReadLine();

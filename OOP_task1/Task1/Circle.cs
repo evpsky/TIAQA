@@ -9,7 +9,7 @@ namespace OOP_task1
         public double Radius { get; set; } // getter and setter 
         public Circle(double radius) // constructor
         {
-            Radius = _radius;
+            Radius = radius;
         }
 
         public double GetCircleArea() // get circle square
