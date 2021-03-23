@@ -35,7 +35,6 @@ namespace OOP_task1.Helpers
 			Console.WriteLine("\nYou exceeded the number of tries. We will set default random value to  {0}", randomValue);
 			return randomValue;
 		}
-
 		private static readonly Random random = new Random();
 
 		private static double GetRandomNumberBetween(double minValue, double maxValue)

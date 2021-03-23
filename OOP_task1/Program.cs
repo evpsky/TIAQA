@@ -17,14 +17,11 @@ namespace OOP_task1
                 CalculateArea.AreaOfACircle();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 CalculateArea.AreaOfASquare();
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("\nLet's check if circle can fit into square and vice versa!");
                 CheckFigureShapes.GetShape();
             }
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nPress any key to close the program...");
             Console.ReadLine();
         }
-       
     }
 }

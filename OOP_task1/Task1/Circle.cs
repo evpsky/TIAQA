@@ -16,7 +16,6 @@ namespace OOP_task1
         {
             return Math.PI * Math.Pow(Radius, 2);
         }
-
     }
 }
 

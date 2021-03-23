@@ -1,59 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP_task1.Task2
 {
     public class CheckFigureShapes
     {
-        private double squareArea; //Сторона квадрата
-        private double circleRadius; //Диаметр окружности
-
-        public double Area { get; set; }
-        public double Radius { get; set; }
-
-        public CheckFigureShapes(double radius, double area)
-        {
-            Radius = radius;
-            Area = area;
-        }
-
-
         public static void GetShape()
         {
-            const double PI = 3.14;
-            Console.Write("\nEnter circle Area is: {0}", Radius);
-            double S1 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine();
+            // Preview
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("|==========================================================|");
+            Console.WriteLine("| We calculated areas for circle and square                |");
+            Console.WriteLine("| Let's check if circle can fit into square and vice versa!|");
+            Console.WriteLine("|    Solve:                                                |");
+            Console.WriteLine("|        а) can circle fit inside to square?               |");
+            Console.WriteLine("|        б) can square fir inside of circle?               |");
+            Console.WriteLine("|==========================================================|");
+            Console.ForegroundColor = ConsoleColor.Green;
+            // Get data from user
+            Console.Write("\nEnter circle Area: ");
+            double circleArea = Convert.ToDouble(Console.ReadLine());
             Console.Write("Enter square Area: ");
-            double S2 = Convert.ToDouble(Console.ReadLine());
+            double squareArea = Convert.ToDouble(Console.ReadLine());
 
-            double Diametr = Math.Sqrt(S1 / PI) * 2;
-            double Side = Math.Sqrt(S2);
-
-            if (Diametr <= Side)
-            {
-                Console.WriteLine();
-                Console.WriteLine("a) Уместится");
-            }
-
-            else
-            {
-                Console.WriteLine();
-                Console.WriteLine("a) Не уместится");
-            }
-
-            double Diagonal = Side * Math.Sqrt(2);
-
-            if (Diagonal <= Diametr)
-                Console.WriteLine("б) Уместится");
-
-            else
-                Console.WriteLine("б) Не уместится");
+            double squateSide = Math.Sqrt(squareArea);
+            double circleDiametr = Math.Sqrt(circleArea / Math.PI) * 2;
+            // Check if shapes can fit into each other
+            if (squateSide < circleArea)
+                Console.WriteLine("Square fits to circle");
+            else if (squateSide >= circleArea)
+                Console.WriteLine("Circle can fit to square");
+                Console.ReadKey();
         }
     }
 }
-
