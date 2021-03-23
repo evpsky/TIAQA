@@ -1,153 +1,27 @@
-﻿using System;
+﻿using OOP_task1.Task2;
+using System;
 
-namespace HomeWork_1
+namespace OOP_task1
 {
     class Program
     {
-        // Задание №2 - Класс для расчета влезет ли квадрат в круг или нет
-        class Square
+        public static void Main(string[] args)
         {
-            private double side; //Сторона квадрата
-            private double diametr; //Диаметр окружности
-
-            public Square()
-            {
-                
-            }
-            public void GetShape()
-            {
-                Console.WriteLine("\nДавайте теперь определим поместится ли квадрат в круг и наоборот :) ");
-                const double P = 3.14;
-                Console.Write("\nВведите площадь круга: ");
-                double S1 = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine();
-                Console.Write("Введите площадь квадрата: ");
-                double S2 = Convert.ToDouble(Console.ReadLine());
-
-                double Diametr = Math.Sqrt(S1 / P) * 2;
-                double Side = Math.Sqrt(S2);
-
-                if (Diametr <= Side)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("a) Уместится");
-                }
-
-                else
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("a) Не уместится");
-                }
-
-                double Diagonal = Side * Math.Sqrt(2);
-
-                if (Diagonal <= Diametr)
-                    Console.WriteLine("б) Уместится");
-
-                else
-                    Console.WriteLine("б) Не уместится");
-            }
-            double Side
-            {
-                get { return side; }
-                set { side = value; }
-            }
-            double Diameter
-            {
-                get { return diametr; }
-                set { diametr = value; }
-            }
-
-
-        }
-
-
-
-        static void Main(string[] args)
-        {
-
+            // Homework #1
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Программа считает площадь квадрата и круга");
-            
-            
+            Console.WriteLine("Program calculates areas of a square and a circle");
 
-            for (int i = 0; i <= 2; i++)
             {
-                
-                Console.WriteLine("\nПопытка №{0}", i + 1);
-                Console.Write("Введите сторону квадрата: ");
-                
-                var sideA = double.Parse((Console.ReadLine()));
-                if (sideA <= 0)
-                {
-                    Console.WriteLine("\nВведенное число меньше или равно нулю, введите сторону квадрата еще раз");
-
-                }
-                else if (sideA > 0)
-                {
-                    // S = a * 2 - площадь квадрата 
-                    var square_1 = sideA * 2;
-                    Console.WriteLine("Площадь прямоугольника: {0}", square_1);
-                    break;
-                }
-                if (i > 1)
-                {
-                    Console.WriteLine("\nКоличество попыток закончилось. будут установлены значения по умолчанию: ");
-                    // S = a * 2 - площадь квадрата 
-                    var square_1 = Math.Round((GetRandomNumber(0.5, 5) * 2), 2);
-                    Console.WriteLine("Площадь прямоугольника: {0}", square_1);
-                }
-
+                CalculateArea areaCalculator = new CalculateArea();
+                Console.ForegroundColor = ConsoleColor.Blue;
+                CalculateArea.AreaOfACircle();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                CalculateArea.AreaOfASquare();
+                CheckFigureShapes.GetShape();
             }
-
-
-            for (int i = 0; i <= 2; i++)
-            {
-                Console.WriteLine("\nТеперь давайте посчитаем радиус круга");
-                Console.WriteLine("\nПопытка №{0}", i + 1);
-                Console.Write("Введите радиус окружности: ");
-                var rad = double.Parse((Console.ReadLine()));
-                if (rad <= 0)
-                {
-                    Console.WriteLine("\nВведенное число меньше или равно нулю, введите радиус окружности еще раз");
-
-                }
-                else if (rad > 0)
-                {
-                    // S = 3,14 * R*2 - площадь круга
-                    var square_2 = Math.Round(Math.PI * Math.Pow(rad, 2), 2);
-                    Console.WriteLine("Площадь круга: {0}", square_2);
-                    break;
-                }
-                if (i > 1)
-                {
-                    Console.WriteLine("Количество попыток закончилось. будут установлены значения по умолчанию: ");
-                    // S = 3,14 * R*2 - площадь круга
-                    var square_3 = Math.Round(Math.PI * Math.Pow(GetRandomNumber(0.5, 5), 2), 2);
-                    Console.WriteLine("Площадь круга: {0}", square_3);
-
-                }
-
-
-            }
-            // Метод расчета рандомного числа в заданном диапазоне
-            double GetRandomNumber(double minimum, double maximum)
-            {
-                Random random = new Random();
-                return random.NextDouble() * (maximum - minimum) + minimum;
-            }
-
-            // Создаем экземпляр класса и вызываем конструктор для проверки размеров фигур
-            
-            Square fitToSircle = new Square();
-            fitToSircle.GetShape();
-
-
-            Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nPress any key to close the program...");
+            Console.ReadLine();
         }
-       
     }
 }
-
-
