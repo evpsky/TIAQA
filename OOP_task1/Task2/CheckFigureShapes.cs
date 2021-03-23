@@ -1,4 +1,5 @@
 ﻿using System;
+using OOP_task1.Helpers;
 
 namespace OOP_task1.Task2
 {
@@ -17,18 +18,19 @@ namespace OOP_task1.Task2
             Console.WriteLine("|==========================================================|");
             Console.ForegroundColor = ConsoleColor.Green;
             // Get data from user
+            HelperStepsTriesCheck helperStepsTriesCheck = new HelperStepsTriesCheck();
             Console.Write("\nEnter circle Area: ");
-            double circleArea = Convert.ToDouble(Console.ReadLine());
+            double circleArea = helperStepsTriesCheck.GetEnteredValue();
             Console.Write("Enter square Area: ");
-            double squareArea = Convert.ToDouble(Console.ReadLine());
+            double squareArea = helperStepsTriesCheck.GetEnteredValue();
 
             double squateSide = Math.Sqrt(squareArea);
             double circleDiametr = Math.Sqrt(circleArea / Math.PI) * 2;
             // Check if shapes can fit into each other
             if (squateSide < circleArea)
-                Console.WriteLine("Square fits to circle");
+                Console.WriteLine("\nSquare fits to circle");
             else if (squateSide >= circleArea)
-                Console.WriteLine("Circle can fit to square");
+                Console.WriteLine("\nCircle can fit to square");
                 Console.ReadKey();
         }
     }
