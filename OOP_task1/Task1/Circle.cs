@@ -1,20 +1,19 @@
 ﻿using System;
 
-
 namespace OOP_task1
 {
     public class Circle
     {
-        private double _radius; // radius of a circle
-        public double Radius { get; set; } // getter and setter 
-        public Circle(double radius) // constructor
+        public double Radius { get; set; } 
+
+        public Circle(double radius) 
         {
             Radius = radius;
         }
 
-        public double GetCircleArea() // get circle square
+        public double GetCircleArea() 
         {
-            return Math.PI * Math.Pow(Radius, 2);
+            return Math.Round(Math.PI * Math.Pow(Radius, 2), 2);
         }
     }
 }

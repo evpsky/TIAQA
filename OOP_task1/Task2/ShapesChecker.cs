@@ -3,11 +3,11 @@ using OOP_task1.Helpers;
 
 namespace OOP_task1.Task2
 {
-    public class CheckFigureShapes
+    public static class ShapesChecker
     {
-        public static void GetShape()
+        public static void GetShape(Circle circle, Square square)
         {
-            // Preview
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("|==========================================================|");
             Console.WriteLine("| We calculated areas for circle and square                |");
@@ -17,20 +17,19 @@ namespace OOP_task1.Task2
             Console.WriteLine("|        б) can square fir inside of circle?               |");
             Console.WriteLine("|==========================================================|");
             Console.ForegroundColor = ConsoleColor.Green;
-            // Get data from user
-            HelperStepsTriesCheck helperStepsTriesCheck = new HelperStepsTriesCheck();
-            Console.Write("\nEnter circle Area: ");
-            double circleArea = helperStepsTriesCheck.GetEnteredValue();
-            Console.Write("Enter square Area: ");
-            double squareArea = helperStepsTriesCheck.GetEnteredValue();
 
-            double squateSide = Math.Sqrt(squareArea);
-            double circleDiametr = Math.Sqrt(circleArea / Math.PI) * 2;
+            Console.Write("\nCalculated circle Area: {0}", 15);
+            Console.Write("\nCalculated square Area: {0}", 15);
+            
+
+            double squareSide = Math.Sqrt(15);
+            double circleDiametr = Math.Sqrt(15 / Math.PI) * 2;
+
             // Check if shapes can fit into each other
-            if (squateSide < circleArea)
-                Console.WriteLine("\nSquare fits to circle");
-            else if (squateSide >= circleArea)
-                Console.WriteLine("\nCircle can fit to square");
+            if (squareSide < circleDiametr)
+                Console.WriteLine("\na) Square fits to circle");
+            else if (squareSide >= circleDiametr)
+                Console.WriteLine("\nb) Circle can fit to square");
                 Console.ReadKey();
         }
     }
